@@ -1,22 +1,248 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+
+    <title>Mohtishim Shabir | Personal Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>Hello World! 👋</h1>
-        <p>Ye meri pehli website hai.</p>
+    <!-- LOGIN PAGE -->
+    <section class="login-page" id="loginPage">
 
-        <button onclick="changeText()">Click Me</button>
+        <div class="login-photo">
+            <img src="mohtishim.jpg" alt="Mohtishim Shabir">
+        </div>
 
-        <p id="message"></p>
-    </div>
+        <div class="login-container">
+
+            <div class="lock">🔐</div>
+
+            <h1>Welcome Back! 👋</h1>
+
+            <p>Login to know more about me</p>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+
+            <button onclick="login()">
+                Login →
+            </button>
+
+            <div id="error"></div>
+
+            <small>✨ Dream it. Believe it. Achieve it. ✨</small>
+
+        </div>
+
+    </section>
+
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+
+        <nav>
+
+            <div class="logo">
+                <span>Mohtishim</span> Shabir
+            </div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#interests">Interests</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </nav>
+
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+
+            <div class="hero-text">
+
+                <p class="hello">👋 Hello, I'm</p>
+
+                <h1>Mohtishim Shabir</h1>
+
+                <h2>
+                    IT Student |
+                    Footballer |
+                    Video Editor |
+                    Videographer
+                </h2>
+
+                <p class="description">
+                    I am an IT student who loves technology,
+                    learning new things and building new skills.
+                    I enjoy spending time with my friends and
+                    making every moment memorable.
+                </p>
+
+                <p class="description">
+                    Football is one of my biggest passions.
+                    I also enjoy video editing, photography
+                    and videography.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#about" class="primary-btn">
+                        Know More ↓
+                    </a>
+
+                    <a href="#contact" class="secondary-btn">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-photo">
+
+                <div class="photo-ring">
+
+                    <img
+                        src="mohtishim.jpg"
+                        alt="Mohtishim Shabir"
+                    >
+
+                </div>
+
+                <span class="photo-label">
+                    That's Me! 👋
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- CARDS -->
+        <section class="cards">
+
+            <div class="card" id="about">
+
+                <div class="card-icon">👤</div>
+
+                <h2>About Me</h2>
+
+                <p>
+                    I am Mohtishim Shabir, an IT student
+                    who enjoys technology, football and
+                    creative work.
+                </p>
+
+                <p>
+                    I love learning new things and improving
+                    myself while enjoying life with my friends.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">🎓</div>
+
+                <h2>Education</h2>
+
+                <p>
+                    I am currently an IT student.
+                </p>
+
+                <p>
+                    I am learning technology, programming
+                    and different computer skills.
+                </p>
+
+            </div>
+
+
+            <div class="card" id="skills">
+
+                <div class="card-icon">💻</div>
+
+                <h2>Skills</h2>
+
+                <ul>
+                    <li>✓ Video Editing</li>
+                    <li>✓ Videography</li>
+                    <li>✓ Photography</li>
+                    <li>✓ Technology</li>
+                    <li>✓ Programming</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card" id="interests">
+
+                <div class="card-icon">⚽</div>
+
+                <h2>Interests</h2>
+
+                <ul>
+                    <li>✓ Football</li>
+                    <li>✓ Hanging out with friends</li>
+                    <li>✓ Video Editing</li>
+                    <li>✓ Photography</li>
+                    <li>✓ Videography</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+
+            <h2>Let's Connect 🤝</h2>
+
+            <p>
+                Thanks for visiting my personal website.
+            </p>
+
+            <div class="socials">
+
+                <a href="#" target="_blank">Instagram</a>
+
+                <a href="#" target="_blank">YouTube</a>
+
+                <a href="#" target="_blank">GitHub</a>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            ⭐ Stay focused, keep improving and never stop
+            chasing your dreams.
+        </footer>
+
+    </section>
+
 
     <script src="script.js"></script>
+
 </body>
 </html>
