@@ -60,7 +60,6 @@ body {
     border-radius: 27px;
 }
 
-
 .login-container {
     width: 430px;
 
@@ -167,7 +166,7 @@ body {
 }
 
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 nav {
     position: sticky;
@@ -210,11 +209,11 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #9c3cff;
+    color: #ff5ca8;
 }
 
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero {
     max-width: 1200px;
@@ -307,7 +306,7 @@ nav {
 }
 
 
-/* PHOTO */
+/* ================= PHOTO ================= */
 
 .hero-photo {
     text-align: center;
@@ -362,7 +361,7 @@ nav {
 }
 
 
-/* CARDS */
+/* ================= CARDS ================= */
 
 .cards {
     max-width: 1200px;
@@ -426,7 +425,268 @@ nav {
 }
 
 
-/* CONTACT */
+/* ================= FAVORITE PERSON ================= */
+
+.favorite-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 90px 30px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.favorite-card {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ff3c8d18,
+            transparent 60%
+        ),
+        #0b111c;
+
+    border: 1px solid #4a243d;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+
+    box-shadow:
+        0 0 30px #ff2f7a0d;
+}
+
+.favorite-card:hover {
+    transform: translateY(-8px) scale(1.01);
+
+    border-color: #ff4f9a;
+
+    box-shadow:
+        0 15px 45px #ff2f7a22,
+        0 0 35px #ff2f7a18;
+}
+
+.favorite-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.8s infinite;
+}
+
+.favorite-card h2 {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+
+    background:
+        linear-gradient(90deg, #ff5caa, #c44cff);
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+.favorite-card p {
+    color: #aeb4c2;
+
+    line-height: 1.7;
+}
+
+.favorite-card span {
+    display: block;
+
+    margin-top: 20px;
+
+    color: #ff78b8;
+
+    font-size: 14px;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* ================= FAVORITE POPUP ================= */
+
+.favorite-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: #000000cc;
+
+    backdrop-filter: blur(8px);
+}
+
+.favorite-modal.show {
+    display: flex;
+
+    animation: modalFade 0.3s ease;
+}
+
+.favorite-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 650px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 45px 40px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ff3c8d18,
+            transparent 55%
+        ),
+        #0b111c;
+
+    border: 1px solid #ff4f9a55;
+
+    box-shadow:
+        0 0 50px #ff2f7a25;
+
+    animation: modalOpen 0.4s ease;
+}
+
+.close-btn {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffffff0d;
+
+    color: #aaa;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: #ff3c8d33;
+
+    color: white;
+
+    transform: rotate(90deg);
+}
+
+.modal-heart {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+.favorite-content h2 {
+    font-size: 32px;
+
+    margin-bottom: 25px;
+
+    background:
+        linear-gradient(90deg, #ff5caa, #c44cff);
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+.favorite-content p {
+    color: #c0c5d0;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+.modal-ending {
+    margin-top: 25px;
+
+    color: #ff78b8;
+
+    font-style: italic;
+
+    font-size: 16px;
+}
+
+@keyframes modalFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalOpen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ================= CONTACT ================= */
 
 .contact {
     text-align: center;
@@ -471,7 +731,7 @@ nav {
 }
 
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer {
     margin-top: 50px;
@@ -486,7 +746,7 @@ footer {
 }
 
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
 
@@ -532,5 +792,21 @@ footer {
 
     .hero-photo {
         order: -1;
+    }
+
+    .favorite-section {
+        padding: 60px 20px;
+    }
+
+    .favorite-content {
+        padding: 40px 25px;
+    }
+
+    .favorite-content h2 {
+        font-size: 26px;
+    }
+
+    .favorite-content p {
+        font-size: 14px;
     }
 }
