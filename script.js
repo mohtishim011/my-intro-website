@@ -10,7 +10,6 @@ function login() {
         document.getElementById("error");
 
 
-    // Demo login
     if (username === "mohtishim" && password === "1234") {
 
         document.getElementById("loginPage").style.display = "none";
@@ -27,50 +26,51 @@ function login() {
 }
 
 
-/* ================= FAVORITE PERSON ================= */
+/* ================= MOTIIIIIII POPUP ================= */
 
 function openFavorite() {
 
-    document
-        .getElementById("favoriteModal")
-        .classList.add("show");
+    const modal = document.getElementById("favoriteModal");
+
+    if (modal) {
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    }
 
 }
 
 
 function closeFavorite() {
 
-    document
-        .getElementById("favoriteModal")
-        .classList.remove("show");
+    const modal = document.getElementById("favoriteModal");
+
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
 
 }
 
 
-/* Close popup when clicking outside */
+/* Close when clicking outside the popup */
 
-document.addEventListener("click", function(event) {
+window.addEventListener("click", function(event) {
 
-    const modal =
-        document.getElementById("favoriteModal");
+    const modal = document.getElementById("favoriteModal");
 
     if (event.target === modal) {
-
         closeFavorite();
-
     }
 
 });
 
 
-/* Close popup with ESC key */
+/* Close with ESC key */
 
-document.addEventListener("keydown", function(event) {
+window.addEventListener("keydown", function(event) {
 
     if (event.key === "Escape") {
-
         closeFavorite();
-
     }
 
 });
