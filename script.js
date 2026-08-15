@@ -25,3 +25,52 @@ function login() {
             "Username ya password galat hai!";
     }
 }
+
+
+/* ================= FAVORITE PERSON ================= */
+
+function openFavorite() {
+
+    document
+        .getElementById("favoriteModal")
+        .classList.add("show");
+
+}
+
+
+function closeFavorite() {
+
+    document
+        .getElementById("favoriteModal")
+        .classList.remove("show");
+
+}
+
+
+/* Close popup when clicking outside */
+
+document.addEventListener("click", function(event) {
+
+    const modal =
+        document.getElementById("favoriteModal");
+
+    if (event.target === modal) {
+
+        closeFavorite();
+
+    }
+
+});
+
+
+/* Close popup with ESC key */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeFavorite();
+
+    }
+
+});
