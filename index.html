@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +12,45 @@
 
 <body>
 
-    <!-- LOGIN PAGE -->
+    <!-- ================= LOADING SCREEN ================= -->
+
+    <div class="loader" id="loader">
+
+        <div class="loader-content">
+
+            <div class="loader-logo">MS</div>
+
+            <h2>Welcome to my world</h2>
+
+            <p>Loading portfolio...</p>
+
+            <div class="loader-line">
+                <span></span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= LOGIN PAGE ================= -->
+
     <section class="login-page" id="loginPage">
 
         <div class="login-photo">
+
             <img src="mohtishim.jpg" alt="Mohtishim Shabir">
+
         </div>
+
 
         <div class="login-container">
 
             <div class="lock">🔐</div>
+
+            <p class="login-small-title">
+                PERSONAL PORTFOLIO
+            </p>
 
             <h1>Welcome Back! 👋</h1>
 
@@ -44,15 +74,21 @@
 
             <div id="error"></div>
 
-            <small>✨ Dream it. Believe it. Achieve it. ✨</small>
+            <small>
+                ✨ Dream it. Believe it. Achieve it. ✨
+            </small>
 
         </div>
 
     </section>
 
 
-    <!-- PORTFOLIO -->
+    <!-- ================= PORTFOLIO ================= -->
+
     <section class="portfolio" id="portfolio">
+
+
+        <!-- ================= NAVBAR ================= -->
 
         <nav>
 
@@ -60,26 +96,61 @@
                 <span>Mohtishim</span> Shabir
             </div>
 
-            <div class="nav-links">
+
+            <div class="nav-links" id="navLinks">
+
                 <a href="#home">Home</a>
+
                 <a href="#about">About</a>
+
                 <a href="#skills">Skills</a>
-                <a href="#interests">Interests</a>
+
+                <a href="#projects">Projects</a>
+
+                <a href="#football">Football</a>
+
                 <a href="#favorite">💗 Motiiiiiii</a>
+
                 <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <div class="nav-actions">
+
+                <button
+                    class="theme-btn"
+                    onclick="toggleTheme()"
+                    id="themeButton"
+                >
+                    ☀️
+                </button>
+
+                <button
+                    class="menu-btn"
+                    onclick="toggleMenu()"
+                >
+                    ☰
+                </button>
+
             </div>
 
         </nav>
 
 
-        <!-- HERO -->
-        <section class="hero" id="home">
+        <!-- ================= HERO ================= -->
+
+        <section class="hero reveal" id="home">
 
             <div class="hero-text">
 
-                <p class="hello">👋 Hello, I'm</p>
+                <p class="hello">
+                    👋 Hello, I'm
+                </p>
 
-                <h1>Mohtishim Shabir</h1>
+                <h1>
+                    Mohtishim Shabir
+                </h1>
 
                 <h2>
                     IT Student |
@@ -101,15 +172,42 @@
                     and videography.
                 </p>
 
-                <div class="buttons">
 
-                    <a href="#about" class="primary-btn">
-                        Know More ↓
+                <div class="hero-buttons">
+
+                    <a
+                        href="#about"
+                        class="primary-btn"
+                    >
+                        Explore My World ↓
                     </a>
 
-                    <a href="#contact" class="secondary-btn">
+                    <a
+                        href="#contact"
+                        class="secondary-btn"
+                    >
                         Contact Me
                     </a>
+
+                </div>
+
+
+                <div class="quick-stats">
+
+                    <div>
+                        <strong>IT</strong>
+                        <span>Student</span>
+                    </div>
+
+                    <div>
+                        <strong>⚽</strong>
+                        <span>Football</span>
+                    </div>
+
+                    <div>
+                        <strong>🎬</strong>
+                        <span>Creative</span>
+                    </div>
 
                 </div>
 
@@ -136,101 +234,402 @@
         </section>
 
 
-        <!-- CARDS -->
-        <section class="cards">
+        <!-- ================= ABOUT ================= -->
 
-            <div class="card" id="about">
+        <section
+            class="about-section reveal"
+            id="about"
+        >
 
-                <div class="card-icon">👤</div>
+            <div class="section-heading">
 
-                <h2>About Me</h2>
+                <span>GET TO KNOW ME</span>
 
-                <p>
-                    I am Mohtishim Shabir, an IT student
-                    who enjoys technology, football and
-                    creative work.
-                </p>
-
-                <p>
-                    I love learning new things and improving
-                    myself while enjoying life with my friends.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">🎓</div>
-
-                <h2>Education</h2>
+                <h2>
+                    About <strong>Me</strong>
+                </h2>
 
                 <p>
-                    I am currently an IT student.
-                </p>
-
-                <p>
-                    I am learning technology, programming
-                    and different computer skills.
+                    A little introduction about who I am,
+                    what I love and what I am working towards.
                 </p>
 
             </div>
 
 
-            <div class="card" id="skills">
+            <div class="about-grid">
 
-                <div class="card-icon">💻</div>
+                <div class="about-card">
 
-                <h2>Skills</h2>
+                    <div class="big-icon">
+                        👨‍💻
+                    </div>
 
-                <ul>
-                    <li>✓ Video Editing</li>
-                    <li>✓ Videography</li>
-                    <li>✓ Photography</li>
-                    <li>✓ Technology</li>
-                    <li>✓ Programming</li>
-                </ul>
+                    <h3>
+                        IT Student
+                    </h3>
 
-            </div>
+                    <p>
+                        I enjoy exploring technology,
+                        programming and learning how
+                        digital things work.
+                    </p>
+
+                </div>
 
 
-            <div class="card" id="interests">
+                <div class="about-card">
 
-                <div class="card-icon">⚽</div>
+                    <div class="big-icon">
+                        🎬
+                    </div>
 
-                <h2>Interests</h2>
+                    <h3>
+                        Creative Mind
+                    </h3>
 
-                <ul>
-                    <li>✓ Football</li>
-                    <li>✓ Hanging out with friends</li>
-                    <li>✓ Video Editing</li>
-                    <li>✓ Photography</li>
-                    <li>✓ Videography</li>
-                </ul>
+                    <p>
+                        Video editing, photography and
+                        videography allow me to turn
+                        ideas into something memorable.
+                    </p>
+
+                </div>
+
+
+                <div class="about-card">
+
+                    <div class="big-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        Good Moments
+                    </h3>
+
+                    <p>
+                        I enjoy spending time with friends,
+                        creating memories and enjoying
+                        the little things in life.
+                    </p>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- FAVORITE PERSON -->
+        <!-- ================= SKILLS ================= -->
 
-        <section class="favorite-section" id="favorite">
+        <section
+            class="skills-section reveal"
+            id="skills"
+        >
 
-            <div class="favorite-card" onclick="openFavorite()">
+            <div class="section-heading">
+
+                <span>WHAT I DO</span>
+
+                <h2>
+                    My <strong>Skills</strong>
+                </h2>
+
+                <p>
+                    Things I enjoy learning, creating and improving.
+                </p>
+
+            </div>
+
+
+            <div class="skills-container">
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <span>
+                            💻 Programming
+                        </span>
+
+                        <span>
+                            75%
+                        </span>
+
+                    </div>
+
+                    <div class="skill-bar">
+                        <span style="width: 75%"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <span>
+                            🎬 Video Editing
+                        </span>
+
+                        <span>
+                            90%
+                        </span>
+
+                    </div>
+
+                    <div class="skill-bar">
+                        <span style="width: 90%"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <span>
+                            📹 Videography
+                        </span>
+
+                        <span>
+                            85%
+                        </span>
+
+                    </div>
+
+                    <div class="skill-bar">
+                        <span style="width: 85%"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <span>
+                            📸 Photography
+                        </span>
+
+                        <span>
+                            80%
+                        </span>
+
+                    </div>
+
+                    <div class="skill-bar">
+                        <span style="width: 80%"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROJECTS ================= -->
+
+        <section
+            class="projects-section reveal"
+            id="projects"
+        >
+
+            <div class="section-heading">
+
+                <span>MY WORK</span>
+
+                <h2>
+                    Featured <strong>Projects</strong>
+                </h2>
+
+                <p>
+                    Some of the things I have worked on
+                    and want to build in the future.
+                </p>
+
+            </div>
+
+
+            <div class="project-grid">
+
+
+                <div class="project-card">
+
+                    <div class="project-number">
+                        01
+                    </div>
+
+                    <div class="project-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Personal Portfolio
+                    </h3>
+
+                    <p>
+                        A personal portfolio website created
+                        to introduce myself, my skills,
+                        interests and creative work.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+                    <div class="project-icon">
+                        🚗
+                    </div>
+
+                    <h3>
+                        Accident Detection System
+                    </h3>
+
+                    <p>
+                        An Arduino-based road safety concept
+                        designed around accident detection,
+                        alerts and sensor data.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>Arduino</span>
+                        <span>Sensors</span>
+                        <span>IoT</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-number">
+                        03
+                    </div>
+
+                    <div class="project-icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        Smart Garbage Sorting
+                    </h3>
+
+                    <p>
+                        A smart waste-sorting project concept
+                        combining Arduino, sensors and
+                        intelligent recognition.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>Arduino</span>
+                        <span>AI</span>
+                        <span>Automation</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTBALL ================= -->
+
+        <section
+            class="football-section reveal"
+            id="football"
+        >
+
+            <div class="football-content">
+
+                <div class="football-icon">
+                    ⚽
+                </div>
+
+                <div>
+
+                    <span>
+                        BEYOND TECHNOLOGY
+                    </span>
+
+                    <h2>
+                        Football is
+                        <strong>My Passion</strong>
+                    </h2>
+
+                    <p>
+                        Football is more than just a sport for me.
+                        It is something I genuinely enjoy and
+                        something that keeps me active, focused
+                        and motivated.
+                    </p>
+
+                    <p>
+                        Whether playing on the field or simply
+                        enjoying the game, football is one of
+                        the things that brings me happiness.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FAVORITE PERSON ================= -->
+
+        <section
+            class="favorite-section reveal"
+            id="favorite"
+        >
+
+            <div
+                class="favorite-card"
+                onclick="openFavorite()"
+            >
 
                 <div class="favorite-icon">
                     💗
                 </div>
 
-                <h2>My Favorite Person</h2>
+                <span class="favorite-label">
+                    A SPECIAL PLACE
+                </span>
+
+                <h2>
+                    My Favorite Person
+                </h2>
 
                 <p>
                     There is someone special who has
                     a beautiful place in my life...
                 </p>
 
-                <span>
+                <span class="click-text">
                     Click to know why 💕
                 </span>
 
@@ -239,9 +638,12 @@
         </section>
 
 
-        <!-- FAVORITE PERSON POPUP -->
+        <!-- ================= FAVORITE POPUP ================= -->
 
-        <div class="favorite-modal" id="favoriteModal">
+        <div
+            class="favorite-modal"
+            id="favoriteModal"
+        >
 
             <div class="favorite-content">
 
@@ -255,6 +657,10 @@
                 <div class="modal-heart">
                     💗
                 </div>
+
+                <span class="modal-small">
+                    FOR SOMEONE SPECIAL
+                </span>
 
                 <h2>
                     For My Motiiiiiii 🥹❤️
@@ -294,37 +700,81 @@
         </div>
 
 
-        <!-- CONTACT -->
-        <section class="contact" id="contact">
+        <!-- ================= CONTACT ================= -->
 
-            <h2>Let's Connect 🤝</h2>
+        <section
+            class="contact reveal"
+            id="contact"
+        >
+
+            <span class="contact-small">
+                GET IN TOUCH
+            </span>
+
+            <h2>
+                Let's <strong>Connect</strong> 🤝
+            </h2>
 
             <p>
                 Thanks for visiting my personal website.
+                More projects and creative work are coming soon.
             </p>
 
             <div class="socials">
 
-                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">
+                    Instagram
+                </a>
 
-                <a href="#" target="_blank">YouTube</a>
+                <a href="#" target="_blank">
+                    YouTube
+                </a>
 
-                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">
+                    GitHub
+                </a>
 
             </div>
 
         </section>
 
 
+        <!-- ================= FOOTER ================= -->
+
         <footer>
-            ⭐ Stay focused, keep improving and never stop
-            chasing your dreams.
+
+            <div class="footer-logo">
+                MS
+            </div>
+
+            <p>
+                ⭐ Stay focused, keep improving and never stop
+                chasing your dreams.
+            </p>
+
+            <small>
+                © 2026 Mohtishim Shabir. All rights reserved.
+            </small>
+
         </footer>
 
+
     </section>
+
+
+    <!-- BACK TO TOP -->
+
+    <button
+        class="top-button"
+        id="topButton"
+        onclick="goTop()"
+    >
+        ↑
+    </button>
 
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
