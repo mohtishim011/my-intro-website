@@ -12,6 +12,98 @@ body {
     font-family: Arial, sans-serif;
     background: #050812;
     color: white;
+    transition: 0.3s;
+}
+
+
+/* ================= LOADER ================= */
+
+.loader {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #050812;
+
+    transition: opacity 0.6s ease,
+                visibility 0.6s ease;
+}
+
+.loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-logo {
+    width: 80px;
+    height: 80px;
+
+    margin: auto auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    background:
+        linear-gradient(135deg, #9b2cff, #168dff);
+
+    box-shadow:
+        0 0 40px #7c2cff66;
+}
+
+.loader-content h2 {
+    margin-bottom: 8px;
+}
+
+.loader-content p {
+    color: #999;
+}
+
+.loader-line {
+    width: 220px;
+    height: 3px;
+
+    margin: 25px auto;
+
+    overflow: hidden;
+
+    background: #202638;
+}
+
+.loader-line span {
+    display: block;
+
+    width: 40%;
+    height: 100%;
+
+    background:
+        linear-gradient(90deg, #9b2cff, #168dff);
+
+    animation: loading 1.2s infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(350%);
+    }
 }
 
 
@@ -68,7 +160,17 @@ body {
 
 .lock {
     font-size: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.login-small-title {
+    color: #a83cff;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
 }
 
 .login-container h1 {
@@ -108,6 +210,9 @@ body {
 
 .login-container input:focus {
     border-color: #8c3dff;
+
+    box-shadow:
+        0 0 15px #8c3dff22;
 }
 
 .login-container button {
@@ -171,7 +276,8 @@ body {
 nav {
     position: sticky;
     top: 0;
-    z-index: 10;
+
+    z-index: 100;
 
     display: flex;
 
@@ -184,7 +290,7 @@ nav {
 
     background: #050812ee;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
 }
 
 .logo {
@@ -198,18 +304,47 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 28px;
+    align-items: center;
+    gap: 25px;
 }
 
 .nav-links a {
     color: #ccc;
+
     text-decoration: none;
 
     transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #ff5ca8;
+    color: #b85cff;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.theme-btn,
+.menu-btn {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #303b50;
+
+    border-radius: 10px;
+
+    background: #101722;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.menu-btn {
+    display: none;
 }
 
 
@@ -250,6 +385,7 @@ nav {
         linear-gradient(90deg, #a72cff, #1598ff);
 
     -webkit-background-clip: text;
+
     color: transparent;
 }
 
@@ -269,7 +405,7 @@ nav {
     margin-bottom: 15px;
 }
 
-.buttons {
+.hero-buttons {
     margin-top: 30px;
 
     display: flex;
@@ -297,12 +433,41 @@ nav {
 
 .secondary-btn {
     border: 1px solid #7040a8;
+
     color: white;
 }
 
 .primary-btn:hover,
 .secondary-btn:hover {
     transform: translateY(-3px);
+}
+
+.quick-stats {
+    display: flex;
+
+    gap: 35px;
+
+    margin-top: 35px;
+}
+
+.quick-stats div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.quick-stats strong {
+    font-size: 22px;
+
+    color: #b45cff;
+}
+
+.quick-stats span {
+    color: #888;
+
+    font-size: 13px;
 }
 
 
@@ -351,88 +516,362 @@ nav {
 }
 
 @keyframes glow {
+
     from {
-        box-shadow: 0 0 20px #762cff55;
+        box-shadow:
+            0 0 20px #762cff55;
     }
 
     to {
-        box-shadow: 0 0 45px #168dff99;
+        box-shadow:
+            0 0 45px #168dff99;
     }
 }
 
 
-/* ================= CARDS ================= */
+/* ================= GENERAL SECTION ================= */
 
-.cards {
+section:not(.login-page):not(.hero) {
+    scroll-margin-top: 80px;
+}
+
+.section-heading {
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 100px 20px 50px;
+}
+
+.section-heading > span,
+.contact-small,
+.favorite-label,
+.modal-small,
+.football-content > div > span {
+    color: #a956ff;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+
+    margin: 12px 0;
+}
+
+.section-heading h2 strong {
+    color: #a956ff;
+}
+
+.section-heading p {
+    color: #969dac;
+
+    line-height: 1.7;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-section {
     max-width: 1200px;
 
     margin: auto;
 
-    padding: 30px;
+    padding-bottom: 80px;
+}
 
+.about-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(3, 1fr);
 
     gap: 20px;
+
+    padding: 0 30px;
 }
 
-.card {
-    padding: 28px;
+.about-card {
+    padding: 35px;
 
     background: #0b111c;
 
     border: 1px solid #202a3a;
 
-    border-radius: 15px;
+    border-radius: 18px;
 
-    transition: 0.3s;
+    transition: 0.35s;
 }
 
-.card:hover {
-    transform: translateY(-7px);
+.about-card:hover {
+    transform: translateY(-8px);
 
-    border-color: #7f38ff;
+    border-color: #853dff;
 
     box-shadow:
-        0 10px 30px #6d2cff22;
+        0 15px 40px #6d2cff1c;
 }
 
-.card-icon {
+.big-icon {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.about-card h3 {
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: #aeb4c2;
+
+    line-height: 1.8;
+}
+
+
+/* ================= SKILLS ================= */
+
+.skills-section {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding-bottom: 90px;
+}
+
+.skills-container {
+    padding: 0 30px;
+}
+
+.skill {
+    margin-bottom: 30px;
+}
+
+.skill-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    color: #ddd;
+}
+
+.skill-top span:last-child {
+    color: #a956ff;
+}
+
+.skill-bar {
+    width: 100%;
+
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #151d2b;
+}
+
+.skill-bar span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(90deg, #9b2cff, #168dff);
+}
+
+
+/* ================= PROJECTS ================= */
+
+.projects-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding-bottom: 90px;
+}
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    padding: 0 30px;
+}
+
+.project-card {
+    position: relative;
+
+    padding: 35px;
+
+    min-height: 330px;
+
+    overflow: hidden;
+
+    background: #0b111c;
+
+    border: 1px solid #202a3a;
+
+    border-radius: 18px;
+
+    transition: 0.35s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #843cff;
+
+    box-shadow:
+        0 20px 50px #702cff18;
+}
+
+.project-number {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    color: #333d4f;
+
     font-size: 30px;
 
+    font-weight: bold;
+}
+
+.project-icon {
+    font-size: 42px;
+
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    font-size: 22px;
+
     margin-bottom: 15px;
 }
 
-.card h2 {
-    margin-bottom: 15px;
-}
-
-.card p,
-.card li {
+.project-card p {
     color: #aeb4c2;
 
     line-height: 1.7;
 }
 
-.card ul {
-    list-style: none;
+.project-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 25px;
 }
 
-.card li {
-    margin: 8px 0;
+.project-tags span {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #171d2a;
+
+    color: #a956ff;
+
+    font-size: 12px;
 }
 
 
-/* ================= FAVORITE PERSON ================= */
+/* ================= FOOTBALL ================= */
+
+.football-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 30px 30px 100px;
+}
+
+.football-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 55px;
+
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at left,
+            #1d58a820,
+            transparent 50%
+        ),
+        #0b111c;
+
+    border: 1px solid #26334b;
+}
+
+.football-icon {
+    min-width: 120px;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 60px;
+
+    background: #111b2b;
+
+    box-shadow:
+        0 0 30px #168dff22;
+}
+
+.football-content h2 {
+    font-size: 38px;
+
+    margin: 12px 0 18px;
+}
+
+.football-content h2 strong {
+    color: #168dff;
+}
+
+.football-content p {
+    color: #aeb4c2;
+
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+}
+
+
+/* ================= FAVORITE ================= */
 
 .favorite-section {
     max-width: 1200px;
 
     margin: auto;
 
-    padding: 90px 30px;
+    padding: 70px 30px 100px;
 
     display: flex;
 
@@ -441,9 +880,10 @@ nav {
 
 .favorite-card {
     width: 100%;
+
     max-width: 650px;
 
-    padding: 45px 35px;
+    padding: 50px 35px;
 
     text-align: center;
 
@@ -457,7 +897,7 @@ nav {
 
     border: 1px solid #4a243d;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     cursor: pointer;
 
@@ -468,13 +908,12 @@ nav {
 }
 
 .favorite-card:hover {
-    transform: translateY(-8px) scale(1.01);
+    transform: translateY(-8px);
 
     border-color: #ff4f9a;
 
     box-shadow:
-        0 15px 45px #ff2f7a22,
-        0 0 35px #ff2f7a18;
+        0 15px 45px #ff2f7a22;
 }
 
 .favorite-icon {
@@ -486,9 +925,9 @@ nav {
 }
 
 .favorite-card h2 {
-    font-size: 30px;
+    font-size: 32px;
 
-    margin-bottom: 15px;
+    margin: 12px 0;
 
     background:
         linear-gradient(90deg, #ff5caa, #c44cff);
@@ -504,14 +943,12 @@ nav {
     line-height: 1.7;
 }
 
-.favorite-card span {
+.click-text {
     display: block;
 
     margin-top: 20px;
 
     color: #ff78b8;
-
-    font-size: 14px;
 }
 
 @keyframes heartbeat {
@@ -534,7 +971,7 @@ nav {
 
     inset: 0;
 
-    z-index: 100;
+    z-index: 1000;
 
     display: none;
 
@@ -545,19 +982,14 @@ nav {
 
     background: #000000cc;
 
-    backdrop-filter: blur(8px);
-}
-
-.favorite-modal.show {
-    display: flex;
-
-    animation: modalFade 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
 .favorite-content {
     position: relative;
 
     width: 100%;
+
     max-width: 650px;
 
     max-height: 85vh;
@@ -627,7 +1059,7 @@ nav {
 .favorite-content h2 {
     font-size: 32px;
 
-    margin-bottom: 25px;
+    margin: 12px 0 25px;
 
     background:
         linear-gradient(90deg, #ff5caa, #c44cff);
@@ -651,38 +1083,6 @@ nav {
     color: #ff78b8;
 
     font-style: italic;
-
-    font-size: 16px;
-}
-
-@keyframes modalFade {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes modalOpen {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(30px)
-            scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
 }
 
 
@@ -695,13 +1095,19 @@ nav {
 }
 
 .contact h2 {
-    font-size: 35px;
+    font-size: 42px;
 
-    margin-bottom: 15px;
+    margin: 12px 0 15px;
+}
+
+.contact h2 strong {
+    color: #a956ff;
 }
 
 .contact p {
     color: #aaa;
+
+    line-height: 1.7;
 }
 
 .socials {
@@ -715,28 +1121,32 @@ nav {
 }
 
 .socials a {
-    padding: 12px 20px;
+    padding: 13px 22px;
 
     border: 1px solid #303b50;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     color: white;
 
     text-decoration: none;
+
+    transition: 0.3s;
 }
 
 .socials a:hover {
     border-color: #8c3dff;
+
+    transform: translateY(-3px);
 }
 
 
 /* ================= FOOTER ================= */
 
 footer {
-    margin-top: 50px;
+    margin-top: 30px;
 
-    padding: 25px;
+    padding: 35px 20px;
 
     text-align: center;
 
@@ -745,10 +1155,178 @@ footer {
     border-top: 1px solid #202638;
 }
 
+.footer-logo {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(135deg, #9b2cff, #168dff);
+
+    color: white;
+
+    font-weight: bold;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer small {
+    color: #555f70;
+}
+
+
+/* ================= SCROLL REVEAL ================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ================= BACK TO TOP ================= */
+
+.top-button {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 500;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid #7040a8;
+
+    border-radius: 50%;
+
+    background: #101722;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+.top-button.show {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+.top-button:hover {
+    transform: translateY(-4px);
+
+    background: #7c32d8;
+}
+
+
+/* ================= LIGHT MODE ================= */
+
+body.light-mode {
+    background: #f4f6fb;
+
+    color: #111827;
+}
+
+body.light-mode .portfolio {
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            #7c3cff12,
+            transparent 30%
+        ),
+        #f4f6fb;
+}
+
+body.light-mode nav {
+    background: #ffffffdd;
+
+    border-color: #e2e5ec;
+}
+
+body.light-mode .nav-links a {
+    color: #4b5563;
+}
+
+body.light-mode .nav-links a:hover {
+    color: #7c3aed;
+}
+
+body.light-mode .theme-btn,
+body.light-mode .menu-btn {
+    background: white;
+
+    color: #222;
+
+    border-color: #d5d9e2;
+}
+
+body.light-mode .about-card,
+body.light-mode .project-card,
+body.light-mode .favorite-card,
+body.light-mode .football-content {
+    background: white;
+
+    border-color: #e2e5ec;
+}
+
+body.light-mode .about-card p,
+body.light-mode .project-card p,
+body.light-mode .favorite-card p,
+body.light-mode .football-content p,
+body.light-mode .section-heading p {
+    color: #667085;
+}
+
+body.light-mode .skill-bar {
+    background: #e3e7ef;
+}
+
+body.light-mode .project-tags span {
+    background: #f1f3f7;
+}
+
+body.light-mode .top-button {
+    background: white;
+
+    color: #333;
+
+    border-color: #ddd;
+}
+
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
     .login-page {
         flex-direction: column;
@@ -767,7 +1345,31 @@ footer {
     }
 
     .nav-links {
+        position: absolute;
+
+        top: 81px;
+        left: 0;
+        right: 0;
+
         display: none;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 25px;
+
+        background: #050812f5;
+
+        border-bottom: 1px solid #202638;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
     }
 
     .hero {
@@ -782,20 +1384,78 @@ footer {
         font-size: 45px;
     }
 
-    .buttons {
+    .hero-buttons {
         justify-content: center;
     }
 
-    .cards {
+    .quick-stats {
+        justify-content: center;
+    }
+
+    .about-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero-photo {
-        order: -1;
+    .project-grid {
+        grid-template-columns: 1fr;
     }
 
-    .favorite-section {
-        padding: 60px 20px;
+    .football-content {
+        flex-direction: column;
+
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .login-page {
+        padding: 20px;
+    }
+
+    .login-photo {
+        width: 250px;
+        height: 320px;
+    }
+
+    .login-container h1 {
+        font-size: 34px;
+    }
+
+    .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero h2 {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    .photo-ring {
+        width: 260px;
+        height: 260px;
+    }
+
+    .quick-stats {
+        gap: 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .football-content {
+        padding: 35px 25px;
+    }
+
+    .football-content h2 {
+        font-size: 30px;
     }
 
     .favorite-content {
@@ -803,10 +1463,20 @@ footer {
     }
 
     .favorite-content h2 {
-        font-size: 26px;
+        font-size: 27px;
     }
 
     .favorite-content p {
         font-size: 14px;
+    }
+
+    .socials {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .socials a {
+        width: 180px;
     }
 }
